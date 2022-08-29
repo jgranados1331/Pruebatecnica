@@ -1,0 +1,45 @@
+Funcionamiento del micro servicio
+1. Tener un probador de envio de peticiones ya sea postman o cualquier otro.
+2. Abrir una consola dentro de la carpeta del codigo ya sea mediante git bash o la terminal de visual studio
+3. Crear una base de datos dentro de postgresql por medio de terminal (el codigo de creacion de base de datos se encuentra en 'src/database/database.sql')
+realizar los pasos que alli dice
+4. Creada la base de datos pondremos los siguientos comandos en la terminal npm i nodemon, npm i express y npm i pg 
+5. Dentro de la terminal pondremos el siguiente codigo para iniciar el micro servicio 'npm run dev' ya iniciado el micro servicio 
+no arrojara un mensaje diciendo "Server on port 1234(puerto solicitado en la prueba)".
+6. Iremos a postman o nuestro probador y pondremos lo siguiente  http://localhost:1234/ 
+7. Iremos al apartado de routes y escogeremos inicialmente createDepa, seria http://localhost:1234/departamento (metodo post) ingresaremos un body json
+
+{
+  "codigo": 1,
+  "name": "Santander",
+  "presupuesto": 2.5
+}
+{
+  "codigo": 2,
+  "name": "Cundinamarca",
+  "presupuesto": 4.5
+}
+8. Pasaremos con el siguiente metodo que sera createUser http://localhost:1234/empleados (metodo post) ingresaremos el siguiente body json
+
+{
+  "codigo": 1,
+  "nif": "1012151",
+  "nombre": "Albert",
+  "apellido1": "Sanchez",
+  "apellido2": "Buitrago",
+  "codigodepartamento": 1,
+}
+
+9. Para la busqueda por id, la eliminacion y el update usaremos http://localhost:1234/empleados/:id (metodo get, metodo delete o put) 
+Para el update ingresaremos el siguiente body json
+
+{
+  "name": "Jose",
+  "apellido1": "Casas",
+  "apellido2": "Barragan",
+  "codigodepartamento": 2, 
+}
+
+10. Para la busqueda general usaremos http://localhost:1234/empleados (metodo get) y nos traera la info.
+
+finalizaremos el microservicio MUCHAS GRACIAS
